@@ -15,7 +15,7 @@ public class EaaaFileStorage {
             .setPrettyPrinting()
             .create();
 
-    private static final File file = new File("./src/opgave01/eaaa.json");
+    private final File file = new File("./src/opgave01/eaaa.json");
 
     public EaaaFileStorage() {
         load();

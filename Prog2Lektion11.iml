@@ -27,5 +27,6 @@
     </orderEntry>
     <orderEntry type="library" exported="" name="google.code.gson" level="project" />
     <orderEntry type="library" name="javafx" level="application" />
+    <orderEntry type="library" name="mockito.core" level="project" />
   </component>
 </module>
