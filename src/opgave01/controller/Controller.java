@@ -19,12 +19,12 @@ public class Controller {
      * @param role
      * @return List<Person> where all person has the given role
      */
-    public List<Person> filter(Role role) {
-        List<Person> personList = new ArrayList<>();
-        for (Person person : eaaaStorage.getPeople()) {
-            if (person.getRole().equals(role)){
-                personList.add(person);
-            }
+    public ArrayList<Person> filter(Role role) {
+        ArrayList<Person> personList = new ArrayList<>();
+        for (int i = 0; i < eaaaStorage.getPeople().size(); i++) {
+            if (eaaaStorage.getPeople().get(i).getRole().equals(role)){
+                personList.add(eaaaStorage.getPeople().get(i));
+        }
         }
         return personList;
     }
@@ -43,8 +43,9 @@ public class Controller {
      */
     public void addPerson(Person person) {
         if (!eaaaStorage.getPeople().contains(person)){
-            eaaaStorage.getPeople().add(person);
+            eaaaStorage.addPerson(person);
         }
+        eaaaStorage.save();
     }
     public Person createPerson(String name, Role role){
         Person person = new Person(name, role);
